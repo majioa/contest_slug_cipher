@@ -3,3 +3,17 @@ p#notice = notice
 p
   strong Greeting,
   = @user.name
+
+  = form_for @message do |f|
+    .field
+      = f.hidden_field :user_id
+    .field
+      = f.label :text
+      = f.text_area :text
+    .field
+      = f.label :digit
+      = f.text_field :digit
+    .actions = f.submit
+
+  #cipher
+    = @cipher

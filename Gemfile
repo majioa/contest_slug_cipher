@@ -44,6 +44,8 @@ gem 'twitter-bootstrap-rails'
 
 gem 'therubyracer'
 
+gem 'services'
+
 group :development, :test do
    gem "factory_girl_rails"
    gem 'rspec-rails', '~> 3.1'

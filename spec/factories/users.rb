@@ -1,6 +1,5 @@
 FactoryGirl.define do
   factory :user do
-    name "MyString"
-    slug "MyString"
+    name "John Bow"
   end
 end

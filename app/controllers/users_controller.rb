@@ -10,6 +10,8 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @message = @user.message || Message.new(user: @user)
+    @cipher = CalculateCipher.new(@message).do
   end
 
   # POST /users

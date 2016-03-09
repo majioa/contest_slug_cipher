@@ -15,3 +15,39 @@
 //= require twitter/bootstrap
 //= require turbolinks
 //= require_tree .
+//
+
+$( document ).ready(function() {
+   function asyncEvent() {
+      var dfd = jQuery.Deferred();
+      
+      // Resolve after a random interval
+      setTimeout(function() {
+         dfd.resolve( "update" );
+      }, Math.floor( 500 ));
+   
+      return dfd.promise();
+   }
+
+   $( "#message_text" ).keypress(function() {
+      path = $( ".edit_message" ).attr('action');
+      $.when( asyncEvent() ).then(
+         function( status ) {
+            $.ajax({
+               type: "POST",
+               dataType : "json",
+               url: path,
+               data: $( ".edit_message" ).serialize(),
+               success: function( json ) {
+                  $('#cipher').text(json['cipher']);
+                  return false;
+               },
+               error: function( json ) {
+                  return false;
+               },
+           });
+         });
+   });
+});
+
+
