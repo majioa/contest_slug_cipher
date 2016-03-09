@@ -7,6 +7,7 @@ require 'spec_helper'
 require 'factory_girl'
 require 'shoulda/matchers'
 require 'pry'
+require 'capybara/rspec'
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 

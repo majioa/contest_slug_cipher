@@ -42,6 +42,8 @@ gem 'friendly_id', '~> 5.1.0'
 
 gem 'twitter-bootstrap-rails'
 
+gem 'therubyracer'
+
 group :development, :test do
    gem "factory_girl_rails"
    gem 'rspec-rails', '~> 3.1'
@@ -54,4 +56,5 @@ group :test do
    gem 'shoulda-matchers', '3.0'
    gem 'database_cleaner'
    gem 'capybara'
+#   gem 'capybara-webkit'
 end
